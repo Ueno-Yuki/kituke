@@ -74,7 +74,7 @@
 }
 
 /* Calendar Customization */
-:global(.react-datepicker) {
+.datePickerWrapper :global(.react-datepicker) {
   font-family: inherit;
   border: none;
   border-radius: 8px;
@@ -82,7 +82,7 @@
   background-color: white;
 }
 
-:global(.react-datepicker__header) {
+.datePickerWrapper :global(.react-datepicker__header) {
   background-color: #f8f4f1;
   border-bottom: none;
   border-top-left-radius: 8px;
@@ -90,21 +90,21 @@
   padding-top: 1rem;
 }
 
-:global(.react-datepicker__current-month) {
+.datePickerWrapper :global(.react-datepicker__current-month) {
   color: #333;
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
-:global(.react-datepicker__day-name) {
+.datePickerWrapper :global(.react-datepicker__day-name) {
   color: #666;
   font-weight: 500;
   width: 2.5rem;
   margin: 0.2rem;
 }
 
-:global(.react-datepicker__day) {
+.datePickerWrapper :global(.react-datepicker__day) {
   color: #333;
   border-radius: 4px;
   margin: 0.2rem;
@@ -114,43 +114,43 @@
   text-align: center;
 }
 
-:global(.react-datepicker__day:hover:not(.react-datepicker__day--disabled)) {
+.datePickerWrapper :global(.react-datepicker__day:hover:not(.react-datepicker__day--disabled)) {
   background-color: #e6d5c9;
   cursor: pointer;
 }
 
-:global(.react-datepicker__day--selected) {
+.datePickerWrapper :global(.react-datepicker__day--selected) {
   background-color: #d4b5a0 !important;
   color: white !important;
 }
 
-:global(.react-datepicker__day--disabled) {
+.datePickerWrapper :global(.react-datepicker__day--disabled) {
   color: #ccc !important;
   background-color: #f8f8f8 !important;
   cursor: not-allowed;
 }
 
-:global(.react-datepicker__day--keyboard-selected) {
+.datePickerWrapper :global(.react-datepicker__day--keyboard-selected) {
   background-color: #e6d5c9;
 }
 
-:global(.react-datepicker__navigation) {
+.datePickerWrapper :global(.react-datepicker__navigation) {
   top: 1rem;
 }
 
-:global(.react-datepicker__navigation--previous) {
+.datePickerWrapper :global(.react-datepicker__navigation--previous) {
   left: 1rem;
 }
 
-:global(.react-datepicker__navigation--next) {
+.datePickerWrapper :global(.react-datepicker__navigation--next) {
   right: 1rem;
 }
 
-:global(.react-datepicker__month-container) {
+.datePickerWrapper :global(.react-datepicker__month-container) {
   float: none;
 }
 
-:global(.react-datepicker-popper) {
+.datePickerWrapper :global(.react-datepicker-popper) {
   z-index: 1001 !important;
 }
 
