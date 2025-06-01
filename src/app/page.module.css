@@ -6,13 +6,9 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-geist-sans);
 }
 
@@ -27,137 +23,282 @@
   }
 }
 
+.header {
+  background-color: #f8f4f1;
+  padding: 2rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: #666;
+  font-size: 1.2rem;
+}
+
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
+.hero {
+  position: relative;
+  margin-bottom: 3rem;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
+.heroImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
+.heroContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.heroContent h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.heroContent p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.services {
+  margin-bottom: 3rem;
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.serviceCard {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+}
+
+.serviceImage {
+  width: 100%;
+  height: auto;
   border-radius: 4px;
-  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
-.ctas {
-  display: flex;
-  gap: 16px;
+.serviceCard h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
 }
 
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
+.serviceCard p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.price {
+  font-weight: bold;
+  color: #d4a373 !important;
+  margin-top: 1rem;
+}
+
+.instructors {
+  margin-bottom: 3rem;
+}
+
+.instructors h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.instructorGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.instructorCard {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.instructorImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+}
+
+.instructorCard h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.instructorCard p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.cta {
+  text-align: center;
+  padding: 3rem;
+  background-color: #f8f4f1;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+}
+
+.cta h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.ctaButtons {
   display: flex;
-  align-items: center;
+  gap: 1rem;
   justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+.primary {
+  display: inline-block;
+  background-color: #d4a373;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
 }
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
+.primary:hover {
+  background-color: #c49262;
+}
+
+.secondary {
+  display: inline-block;
+  background-color: white;
+  color: #d4a373;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #d4a373;
+  transition: all 0.2s;
+}
+
+.secondary:hover {
+  background-color: #d4a373;
+  color: white;
 }
 
 .footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
+  background-color: #333;
+  color: white;
+  padding: 3rem 2rem;
 }
 
-.footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
-.footer img {
-  flex-shrink: 0;
+.footerSection h3 {
+  margin-bottom: 1rem;
+  color: #d4a373;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+.footerSection p {
+  margin-bottom: 0.5rem;
+  color: #ccc;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1.5rem;
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-}
-
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
+  .header h1 {
+    font-size: 2rem;
   }
 
   .main {
-    align-items: center;
+    padding: 1rem;
   }
 
-  .main ol {
-    text-align: center;
+  .heroContent {
+    width: 90%;
+    padding: 1.5rem;
   }
 
-  .ctas {
+  .heroContent h2 {
+    font-size: 1.5rem;
+  }
+
+  .serviceGrid,
+  .instructorGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta {
+    padding: 2rem 1rem;
+  }
+
+  .ctaButtons {
     flex-direction: column;
-  }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
   }
 }
 

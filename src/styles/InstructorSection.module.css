@@ -1,0 +1,53 @@
+.instructors {
+  margin-bottom: 3rem;
+}
+
+.instructors h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.instructorGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.instructorCard {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.instructorImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+}
+
+.instructorCard h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.experience {
+  color: #d4a373;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.instructorCard p {
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .instructorGrid {
+    grid-template-columns: 1fr;
+  }
+} 

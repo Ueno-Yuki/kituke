@@ -1,0 +1,56 @@
+.services {
+  margin-bottom: 3rem;
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.serviceCard {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+}
+
+.serviceImage {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.serviceCard h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.serviceCard p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.price {
+  font-weight: bold;
+  color: #d4a373 !important;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .serviceGrid {
+    grid-template-columns: 1fr;
+  }
+} 
