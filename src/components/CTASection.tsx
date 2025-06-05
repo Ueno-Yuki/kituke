@@ -3,15 +3,17 @@
 // useState, Modal, Reservation のインポートは不要になるため削除
 // import { useState } from 'react';
 import styles from '../styles/CTASection.module.css';
+// import { useInView } from './useInView';
 // import Modal from './Modal';
 // import Reservation from './Reservation';
 
 interface CTASectionProps {
   onReserveClick: () => void; // 親から渡されるクリックハンドラ
+  onContactClick: () => void;
 }
 
 // CTASection コンポーネントが props を受け取るように変更
-export default function CTASection({ onReserveClick }: CTASectionProps) {
+export default function CTASection({ onReserveClick, onContactClick }: CTASectionProps) {
   // useState, openModal, closeModal は削除
   // const [isModalOpen, setIsModalOpen] = useState(false);
   // const openModal = () => setIsModalOpen(true);
@@ -26,9 +28,9 @@ export default function CTASection({ onReserveClick }: CTASectionProps) {
         <button onClick={onReserveClick} className={styles.primary}>
           予約する
         </button>
-        <a href="/contact" className={styles.secondary}>
+        <button onClick={onContactClick} className={styles.secondary}>
           お問い合わせ
-        </a>
+        </button>
       </div>
 
       {/* モーダルのレンダリング部分は削除 */}

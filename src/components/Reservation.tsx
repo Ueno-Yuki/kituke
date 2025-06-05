@@ -6,6 +6,7 @@ import { format, addDays } from 'date-fns';
 import { ja } from 'date-fns/locale';
 import "react-datepicker/dist/react-datepicker.css";
 import styles from '../styles/Reservation.module.css';
+import React from 'react';
 
 interface TimeSlot {
   id: string;
@@ -191,13 +192,20 @@ export default function Reservation({ onClose }: ReservationProps) {
               selected={selectedDate}
               onChange={handleDateChange}
               minDate={new Date()}
-              maxDate={addDays(new Date(), 90)} // 3ヶ月先まで選択可能
+              maxDate={addDays(new Date(), 90)}
               filterDate={isDateDisabled}
               dateFormat="yyyy年MM月dd日"
               locale={ja}
               placeholderText="日付を選択してください"
               className={styles.dateInput}
               required
+              customInput={
+                <input
+                  className={styles.dateInput}
+                  readOnly
+                  placeholder="日付を選択してください"
+                />
+              }
             />
           </div>
           <p className={styles.dateNote}>

@@ -9,13 +9,15 @@ import InstructorSection from "../components/InstructorSection";
 import CTASection from "../components/CTASection";
 import Modal from "../components/Modal";
 import Reservation from "../components/Reservation";
+import ContactForm from "../components/ContactForm";
 import HeroSlideshow from '../components/HeroSlideshow';
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalType, setModalType] = useState<null | 'reservation' | 'contact'>(null);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openModal = () => setModalType('reservation');
+  const openContactModal = () => setModalType('contact');
+  const closeModal = () => setModalType(null);
 
   const images = [
     '/kimono-hero.jpg',
@@ -42,13 +44,18 @@ export default function Home() {
 
         <ServiceSection />
         <InstructorSection />
-        <CTASection onReserveClick={openModal} />
+        <CTASection onReserveClick={openModal} onContactClick={openContactModal} />
       </main>
       <Footer />
 
-      {isModalOpen && (
+      {modalType === 'reservation' && (
         <Modal onClose={closeModal}>
           <Reservation onClose={closeModal} />
+        </Modal>
+      )}
+      {modalType === 'contact' && (
+        <Modal onClose={closeModal}>
+          <ContactForm onClose={closeModal} />
         </Modal>
       )}
     </div>
